@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pay a Friend</title>
+    <link rel="stylesheet" href="css/formstyle.css">
+    <script src="js/validateForm.js" defer="true"></script>
+</head>
+<body>
+    <form method="post" action="send" target=_self enctype="multipart/form-data">
+        <section id="top-half">
+            <section id="sender-details">
+                <h1>Sender Details</h1>
+                <img id="user-image" alt="Choose an Image">
+                <div id="browse">
+                    <input disabled id="browse-text" type="text">
+                    <label for="browse-button">Browse</label>
+                    <input type="file" accept="image/*" id="browse-button" name="browse-button">
+                </div>
+                <div class="full-name">
+                    <div class="first-name" id="sender-first-name">
+                        <p>First Name:</p>
+                        <input required type="text"  name="sender-first-name">
+                    </div>
+                    <div class="last-name" id="sender-last-name">
+                        <p>Last Name:</p>
+                        <input required type="text" name="sender-last-name">
+                    </div>
+                </div>
+            </section>
+            <section id="recipient-details">
+                <h1>Recipient Details</h1>
+                <div class="full-name">
+                    <div class="first-name" id="recipient-first-name">
+                        <p>First Name:</p>
+                        <input required type="text" name="recipient-first-name">
+                    </div>
+                    <div class="last-name" id="recipient-last-name">
+                        <p>Last Name:</p>
+                        <input required type="text" name="recipient-last-name">
+                    </div>
+                </div>
+                <p>Message (At least 10 characters)</p>
+                <textarea required id="message" name="message" rows="4" cols="37" minlength="10"></textarea>
+                <p>Notify Recipient</p>
+                <input type="radio" id="email" name="notify" value="email">
+                <label for="email">Email</label>
+                <input type="radio" id="sms" name="notify" value="sms">
+                <label for="sms">SMS</label>
+                <input type="radio" checked id="no-notify" name="notify" value="no-notify">
+                <label for="no-notify">Do not notify</label>
+                <div id="notify-info">
+                    <div id="email-info">
+                        <p>Email:</p>
+                        <input type="text" name="email">
+                    </div>
+                    <div id="phone-info">
+                        <p>Phone Number:</p>
+                        <input type="text" name="phone-number">
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section id="payment-details">
+            <h1>Payment Details</h1>
+            <div id="card-grid">
+                <div id="card-type">
+                    <p>Card Type:</p>
+                    <select name="card-select">
+                        <option value="visa">Visa</option>
+                        <option value="mastercard">Mastercard</option>
+                        <option value="discover">Discover</option>
+                        <option value="american-express">American Express</option>
+                    </select>
+                </div>
+                <div id="card-number">
+                    <p>Card Number:</p>
+                    <input required name="card-number" pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}" type="text" title="Must match: XXXX-XXXX-XXXX-XXXX where X is a number 0-9">
+                </div>
+                <div id="expiration">
+                    <p>Expiration:</p>
+                    <input required type="date" name="expiration">
+                </div>
+                <div id="ccv">
+                    <p>CCV:</p>
+                    <input required minlength="3" maxlength="4" type="password" name="ccv">
+                </div>
+                <div id="amount">
+                    <p>Amount ($):</p>
+                    <input required type="text" name="amount" pattern="[0-9]+\.[0-9]+|[0-9]+" title="Must be a positive number">
+                </div>
+            </div>
+            <div id="terms-agreement">
+                <input required id="terms" type="checkbox" name="terms">
+                <label for="terms">I agree to the Terms and Conditions</label>
+            </div>
+            <button id="send-button">Send</button>
+        </section>
+    </form>
+</body>
+</html>

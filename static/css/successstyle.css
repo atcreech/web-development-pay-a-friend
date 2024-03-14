@@ -1,0 +1,14 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: lightgreen;
+    font-family: Arial;
+}
+
+img {
+    background: darkgreen;
+    padding: 10px;
+    border-radius: 500px;
+    margin-top: calc(50vh - 300px);
+}

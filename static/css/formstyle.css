@@ -1,0 +1,177 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial;
+    background-color: lightgray;
+}
+
+#top-half {
+    display: flex;
+    margin-bottom: 50px;
+}
+
+#sender-details {
+    padding: 5px;
+    padding-right: 50px;
+    border-right: 2px solid;
+}
+
+#sender-details h1 {
+    font-size: 18pt;
+}
+
+#user-image {
+    width: 268px;
+    margin-bottom: 5px;
+}
+
+#browse {
+    display: flex;
+}
+
+#browse input {
+    width: 191px;
+}
+
+#browse-button {
+    display: none;
+}
+
+#browse label {
+    margin-left: 5px;
+    padding: 2px;
+    padding-right: 5px;
+    padding-left: 4px;
+    border: 1px solid;
+    background-color: rgb(230, 230, 230);
+    border-radius: 2px;
+}
+
+#browse label:hover {
+    cursor: pointer;
+}
+
+#browse label:active {
+    background-color: rgb(200, 200, 200);
+}
+
+.full-name {
+    display: flex;
+}
+
+.first-name {
+    margin-right: 10px;
+}
+
+input:invalid {
+    border: 2px solid red;
+}
+
+textarea:invalid {
+    border: 2px solid red;
+}
+
+.first-name input {
+    width: 121px;
+}
+
+.last-name input {
+    width: 121px;
+}
+
+#recipient-details {
+    padding: 5px;
+    padding-left: 50px;
+    border-left: 2px solid;
+}
+
+#recipient-details h1 {
+    font-size: 18pt;
+}
+
+#notify-info {
+    display: flex;
+}
+
+#email-info {
+    margin-right: 10px;
+}
+
+#email-info input {
+    width: 121px;
+}
+
+#phone-info input {
+    width: 121px;
+}
+
+#payment-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#payment-details h1 {
+    font-size: 18pt;
+}
+
+#card-grid {
+    display: grid;
+    grid-template-areas: 
+        'type number number'
+        'expiration ccv amount';
+    gap: 5px;
+}
+
+#card-type {
+    grid-area: type;
+}
+
+#card-number {
+    grid-area: number;
+    margin-left: 5px;
+}
+
+#expiration {
+    grid-area: expiration;
+}
+
+#ccv {
+    grid-area: ccv;
+    margin-left: -10px;
+    margin-right: 5px;
+}
+
+#ccv input {
+    width: 50px;
+}
+
+#amount {
+    grid-area: amount;
+}
+
+#amount input {
+    width: 111px;
+}
+
+#terms {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#send-button {
+    width: 150px;
+    height: 50px;
+    font-size: 16pt;
+    background-color: lightgreen;
+    border-radius: 5px;
+}
+
+#send-button:active {
+    background-color: rgb(120, 202, 120);
+}
+
+#send-button:hover {
+    cursor: pointer;
+}
